@@ -15,9 +15,22 @@ public class less3 {
         System.out.println(c[0]);
 
 
-        int[][] a = new int [3][4];
-        int[][] a = { {1, 2, 3, 4},{5, 6, 7, 8},{9, 10, 11, 12} };
+        int[] a = {145, 53, 51, 70, 30, 12, 62};
+        for (int i = 0; i < a.length; i++){
+            if(a[i] % 2 == 1){
+                System.out.println(a[i]);
+            }
+        }
+        System.out.println("============");
 
+        int[] art = {1,2,3};
+        int sum = 0;
+        for(int i = 0; i < art.length; i++){
+            sum = art[i] + sum;
+
+        }
+
+        System.out.println(sum);
 
     }
 }
