@@ -42,7 +42,28 @@ public class homework3 {
                 System.out.println("Ось ваше число: "+num);
             }
         }
+        System.out.println("===================================");
         //# 4
+        int[] d = {51, 62, 734, 12, 23, 84, 59};
+        for(int i4 = 0; i4 < d.length; i4++){
+            if(d[i4] % 2 == 1){
+                d[i4] = 0;
+                System.out.println(d[i4]);
+            }else {
+                System.out.println(d[i4]);
+            }
+        }
+        //#5
+        System.out.println("===================================");
+        int[] e = {613, 72, 216, 743, 1651, 854, 1235, 754, 1426, 846, 13};
+        for(int i5 = 0; i5 < d.length; i5++){
+            if(e[i5] % 2 == 0){
+                e[i5] = 0;
+                System.out.println(e[i5]);
+            }else {
+                System.out.println(e[i5]);
+            }
+        }
 
 
 
