@@ -2,10 +2,16 @@ import java.util.Scanner;
 
 public class scaner {
     public static void main(String[] args) {
-        Scanner myObj = new Scanner(System.in);
-        System.out.println("Enter username");
-
-        String userName = myObj.nextLine();
-        System.out.println("Username is: " + userName);
+        int[] a = {4, 1, 73, 1, 35};
+        int num = a[0];
+        int sum = 5;
+        for (int i = 0; i < a.length; i ++){
+            num = num + a[i];
+            if (num == sum){
+                System.out.println(sum);
+            }else {
+                System.out.println("Nichogo");
+            }
+        }
     }
 }

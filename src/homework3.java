@@ -1,5 +1,5 @@
 public class homework3 {
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         //#1
         int[] a = {1, 54, 6, 13, 50, 13, 70, 14, 163, 73, 167};
         int x1 = 0;
