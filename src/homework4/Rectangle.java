@@ -1,12 +1,12 @@
 package homework4;
 
-public class rectangle {
+public class Rectangle {
     private int length;
     private int width;
-    public  rectangle(){
+    public  Rectangle(){
 
     }
-    public rectangle(int length, int width){
+    public Rectangle(int length, int width){
         this.width = width;
         this.length = length;
     }
@@ -15,12 +15,12 @@ public class rectangle {
     public int getWidth(){return width;}
     public void setWidth (int width) {this.width = width;}
 
-    public void Perimeter(){
+    public void perimeter(){
         int perimeter = length * 2 + width * 2;
         System.out.println("Периметр прямокутника = " + perimeter);
     }
 
-    public void Area(){
+    public void area(){
         System.out.println("Площа прямокутника: "+ length * width);
     }
 

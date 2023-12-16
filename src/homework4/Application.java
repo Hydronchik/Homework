@@ -1,12 +1,12 @@
 package homework4;
 
-public class Aplication {
+public class Application {
     public static void main(String[] args) {
-        rectangle rectangle = new rectangle(14, 16);
+        Rectangle rectangle = new Rectangle(14, 16);
 
         System.out.println("Довжина прямокутника: " + rectangle.getLength());
         System.out.println("Ширина прямокутника: " + rectangle.getWidth());
-        rectangle.Perimeter();
-        rectangle.Area();
+        rectangle.perimeter();
+        rectangle.area();
     }
 }
