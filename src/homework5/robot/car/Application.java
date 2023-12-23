@@ -10,5 +10,6 @@ public class Application {
         System.out.println(car);
         wheel.newWeel();
         body.newColor();
+        System.out.println(car);
     }
 }

@@ -2,16 +2,16 @@ package homework5.robot.robot;
 
 public class Application {
     public static void main(String[] args){
-        CaffeeRobot caffeeRobot = new CaffeeRobot("Rd2");
-        RobotDancer robotDancer = new RobotDancer(2);
-        RobotCooker robotCooker = new RobotCooker(100);
+        CaffeeRobot caffeeRobot = new CaffeeRobot();
+        RobotDancer robotDancer = new RobotDancer();
+        RobotCooker robotCooker = new RobotCooker();
         Robot robot = new Robot();
 
 
 
-        String[] work4 = {caffeeRobot.getWork(), robotDancer.getWork(), robotCooker.getWork(), robot.getWork()};
+        Robot[] work4 = {caffeeRobot,robotCooker,robotDancer,robot};
         for (int i = 0; i < work4.length; i++){
-            System.out.println(work4[i]);
+            work4[i].work();
         }
 
 
