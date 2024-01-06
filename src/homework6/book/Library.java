@@ -30,7 +30,6 @@ public class Library {
 
             System.out.println("Book successfully added");
         }else{
-
             System.out.println("Збільшіть слоти в бібліотеці щоб додати ще 1 книгу");
         }
     }
