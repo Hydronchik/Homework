@@ -5,15 +5,8 @@ import java.util.Arrays;
 public class Library {
     private Book[] books;
     private int indexOfBook;
-    private boolean booksStatus[];
 
-    public boolean[] getBooksStatus() {
-        return booksStatus;
-    }
 
-    public void setBooksStatus(boolean[] booksStatus) {
-        this.booksStatus = booksStatus;
-    }
 
     public int getIndexOfBook() {
         return indexOfBook;
@@ -26,14 +19,14 @@ public class Library {
     public Library(int capacity) {
         this.books = new Book[capacity];
         this.indexOfBook = 0;
-        this.booksStatus[indexOfBook] = true;
+
 
 
     }
 
-    public void addBook(String title, String author){
+    public void addBook(String title, String author,String statusBook, int year){
         if (indexOfBook < books.length){
-            Book book = new Book(title, author);
+            Book book = new Book(title, author, statusBook, year);
             books[indexOfBook] = book;
 
             indexOfBook++;
@@ -52,15 +45,42 @@ public class Library {
         }
     }
     public void borrowBook(String seachTitle){
+
         for (int i = 0; i < indexOfBook; i ++){
 
             if(books[i].getTitle() == seachTitle){
                 System.out.println("Книга " + seachTitle + " найдена");
-                booksStatus[i] = false;
-                return;
+                books[i].setStatusBook("Заброньована");
+
+            }
+            }
+        }
+
+
+    public void returnBook(String seachTitle){
+
+        for (int i = 0; i < indexOfBook; i ++){
+
+            if(books[i].getTitle() == seachTitle){
+                if (books[i].getStatusBook() == "Заброньована") {
+                    System.out.println("Книга " + seachTitle +" була повернена");
+                    books[i].setStatusBook("Вільна");
+
+
+                }
+
+
+            }
+        }
+
+    }
+
+    public void newOrOld(){
+        for (int i = 0; i < indexOfBook; i ++){
+            if (books[i].getYear() > 2000) {
+                System.out.println("Книга " + books[i].getTitle() + " є новою");
             }else {
-                System.out.println("Kниги "+ seachTitle +" не знайдено");
-                return;
+                System.out.println("Книга " + books[i].getTitle() + " є старою");
             }
         }
     }
