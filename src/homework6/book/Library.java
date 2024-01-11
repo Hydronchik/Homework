@@ -5,8 +5,15 @@ import java.util.Arrays;
 public class Library {
     private Book[] books;
     private int indexOfBook;
-    private Book book;
+    private boolean booksStatus[];
 
+    public boolean[] getBooksStatus() {
+        return booksStatus;
+    }
+
+    public void setBooksStatus(boolean[] booksStatus) {
+        this.booksStatus = booksStatus;
+    }
 
     public int getIndexOfBook() {
         return indexOfBook;
@@ -19,6 +26,8 @@ public class Library {
     public Library(int capacity) {
         this.books = new Book[capacity];
         this.indexOfBook = 0;
+        this.booksStatus[indexOfBook] = true;
+
 
     }
 
@@ -26,11 +35,33 @@ public class Library {
         if (indexOfBook < books.length){
             Book book = new Book(title, author);
             books[indexOfBook] = book;
+
             indexOfBook++;
 
-            System.out.println("Book successfully added");
+
+
+
+            System.out.println("Книжка " + title + " від автора " + author + " успіщно додана");
         }else{
             System.out.println("Збільшіть слоти в бібліотеці щоб додати ще 1 книгу");
+        }
+    }
+    public void displayAvailableBooks(){
+        for (int i = 0; i < indexOfBook; i ++){
+            System.out.println(books[i]);
+        }
+    }
+    public void borrowBook(String seachTitle){
+        for (int i = 0; i < indexOfBook; i ++){
+
+            if(books[i].getTitle() == seachTitle){
+                System.out.println("Книга " + seachTitle + " найдена");
+                booksStatus[i] = false;
+                return;
+            }else {
+                System.out.println("Kниги "+ seachTitle +" не знайдено");
+                return;
+            }
         }
     }
 
