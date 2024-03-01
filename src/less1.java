@@ -13,6 +13,13 @@ public class less1 {
 
             System.out.println(sum);
         }
+
+
+
+
+
+
+
     }
 }
 //1-f? 5-f,2-f,3-t,4-t

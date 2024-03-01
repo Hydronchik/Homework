@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Application {
+    private int release;
+    private int horsePower;
 
     public static void menu(){
         System.out.println("=================MENU=================");
@@ -29,8 +31,9 @@ public class Application {
 
                 }
                 case "2" -> {
+                    int index = 0;
                     for (Car c : cars){
-                        int index = 0;
+
                         index ++;
                         cars.get(index).setHorsePower(cars.get(0).getHorsePower());
                         cars.get(index).setYearOfRelease(cars.get(0).getYearOfRelease());
@@ -44,4 +47,5 @@ public class Application {
         }
 
     }
+
 }

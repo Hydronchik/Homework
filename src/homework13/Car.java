@@ -24,7 +24,10 @@ public class Car {
     public void setYearOfRelease(int yearOfRelease) {
         this.yearOfRelease = yearOfRelease;
     }
-
+    public static void newCar(int horsePower, int yearOfRelease){
+        Car car = new Car(yearOfRelease, horsePower);
+        System.out.println("Твоя машина: " + car);
+    }
     @Override
     public String toString() {
         return "Car{" +
