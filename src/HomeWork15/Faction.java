@@ -62,26 +62,7 @@ public class Faction {
         }
 
     }
-    public void giveBride(){
-        System.out.println("Введіть суму хабара");
-        Scanner sBribe = new Scanner(System.in);
-        int bride = sBribe.nextInt();
-        System.out.println("Введіть імя депутата якому хочете дати хабара: ");
-        Scanner scanner = new Scanner(System.in);
-        String nameDeputy = scanner.next();
-        for (Deputy d : deputies){
-            if (nameDeputy == d.getName() || bride <= 5000){
-                System.out.println("Депутат був найдений, і ви дали хабара");
 
-            } else if (bride > 5000) {
-                System.out.println("Депутата піймала міліція");
-                deputies.remove(d);
-            } else {
-                System.out.println("Депутата з таким іменем не найдено");
-            }
-        }
-
-    }
     public void deputyList(){
         for (Deputy d : deputies){
             System.out.println("Прізвище: " + d.getLastName()

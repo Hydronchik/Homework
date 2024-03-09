@@ -42,7 +42,7 @@ public class Main {
                     faction.clearAllDeputy();
                 }
                 case "7" -> {
-                    faction.giveBride();
+
                 }
             }
         }

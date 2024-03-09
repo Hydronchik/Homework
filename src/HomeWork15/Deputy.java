@@ -2,7 +2,7 @@ package HomeWork15;
 
 import java.util.Scanner;
 
-public class Deputy extends Human{
+public class Deputy extends Human {
     private String lastName;
     private String name;
     private int age;
@@ -56,7 +56,21 @@ public class Deputy extends Human{
     public void setSizeBride(int sizeBride) {
         this.sizeBride = sizeBride;
     }
-
+    public void giveBride(){
+        if (!bribe){
+            System.out.println("Цей депутат не бере хабарів!");
+        }else {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введіть суму хабара: ");
+            int sumBribe = scanner.nextInt();
+            if (sumBribe > 5000){
+                System.out.println("Депутата повязала міліція");
+            }else {
+                System.out.println("Депутату дали хабар " + sumBribe);
+                setSizeBride(sumBribe);
+            }
+        }
+    }
 
     @Override
     public String toString() {
