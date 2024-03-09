@@ -47,14 +47,36 @@ public class Faction {
         System.out.println(lastName+" "+" "+name + " вага: " + weight +" Ріст: " + height + " Вік: "+ age + " Хабарник: " + bribe);
 
     }
-    public void giveBride(int bride){
+    public void removeDeputy(){
+        System.out.println("Введіть ім'я депутата якого хочете видалити");
+        Scanner sRemoveDeputy = new Scanner(System.in);
+        String removeDeputy = sRemoveDeputy.next();
+        for (Deputy d : deputies){
+            if (removeDeputy == d.getName()){
+                deputies.remove(d);
+                System.out.println("Депутата "+ d.getName() + " " + d.getLastName() + "Було видалено");
+            }else{
+                System.out.println("Депутата з іменем "+ removeDeputy + "не найдено");
+
+            }
+        }
+
+    }
+    public void giveBride(){
+        System.out.println("Введіть суму хабара");
+        Scanner sBribe = new Scanner(System.in);
+        int bride = sBribe.nextInt();
         System.out.println("Введіть імя депутата якому хочете дати хабара: ");
         Scanner scanner = new Scanner(System.in);
         String nameDeputy = scanner.next();
         for (Deputy d : deputies){
             if (nameDeputy == d.getName() || bride <= 5000){
                 System.out.println("Депутат був найдений, і ви дали хабара");
-            }else {
+
+            } else if (bride > 5000) {
+                System.out.println("Депутата піймала міліція");
+                deputies.remove(d);
+            } else {
                 System.out.println("Депутата з таким іменем не найдено");
             }
         }
@@ -68,5 +90,30 @@ public class Faction {
                     + " Хабарник: " + d.isBribe());
         }
     }
-
+    public void getBriber(){
+        for (Deputy d : deputies){
+            if (d.isBribe() == true){
+                System.out.println(d.getLastName() + " " + d.getName() + "вік: " + d.getAge() + "років" +" cумарно взяв хабарів на "+ d.getSizeBride());
+            }
+        }
+    }
+    public void clearAllDeputy(){
+        for (Deputy d : deputies){
+            deputies.remove(d);
+        }
+        System.out.println("Всі депутати фракції були видалені!");
+    }
+    public void topBribe(){
+        int maxBribe = 0;
+        for (Deputy d : deputies){
+            if (maxBribe <= d.getSizeBride()){
+                maxBribe = d.getSizeBride();
+            }
+            for (Deputy c : deputies){
+                if (maxBribe == c.getSizeBride()){
+                    System.out.println(c.getLastName() + " "+ c.getName() + "є найбільшим хабарником");
+                }
+            }
+        }
+    }
 }
